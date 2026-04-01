@@ -1,0 +1,90 @@
+# ===================
+# Dependencies
+# ===================
+node_modules/
+.pnp
+.pnp.js
+
+# ===================
+# Build outputs
+# ===================
+dist/
+build/
+*.local
+
+# ===================
+# IDE & Editors
+# ===================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ===================
+# OS generated files
+# ===================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===================
+# Logs
+# ===================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===================
+# Environment files
+# ===================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# ===================
+# Testing
+# ===================
+coverage/
+.nyc_output/
+
+# ===================
+# Cache
+# ===================
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# ===================
+# Package files
+# ===================
+*.tgz
+*.tar.gz
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ===================
+# Docker
+# ===================
+.docker/
+
+# ===================
+# Misc
+# ===================
+*.bak
+*.tmp
+*.temp
