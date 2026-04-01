@@ -83,8 +83,18 @@
           </template>
         </el-table-column>
         <el-table-column prop="publishDate" label="出版日期" width="110" align="center" />
-        <el-table-column label="操作" width="140" align="center" fixed="right">
+        <el-table-column label="操作" width="180" align="center" fixed="right">
           <template #default="{ row }">
+            <el-tooltip content="查看" placement="top">
+              <el-button
+                type="info"
+                size="small"
+                :icon="View"
+                @click="handleView(row)"
+                circle
+                plain
+              />
+            </el-tooltip>
             <el-tooltip content="编辑" placement="top">
               <el-button
                 type="primary"
@@ -133,7 +143,7 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessageBox } from 'element-plus'
-import { Document, Plus, Search, Refresh, Edit, Delete, User } from '@element-plus/icons-vue'
+import { Document, Plus, Search, Refresh, Edit, Delete, User, View } from '@element-plus/icons-vue'
 import { useBookStore } from '@/stores/book'
 
 const router = useRouter()
@@ -178,6 +188,10 @@ const handleReset = () => {
   bookStore.resetSearch()
   currentPage.value = 1
   bookStore.fetchBooks()
+}
+
+const handleView = (row) => {
+  router.push(`/main/books/detail/${row.id}`)
 }
 
 const handleEdit = (row) => {
