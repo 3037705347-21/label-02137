@@ -30,7 +30,7 @@ EXPOSE 8081
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8081/ || exit 1
+  CMD curl -f http://localhost:8081/ || exit 1
 
 # 启动 nginx
 CMD ["nginx", "-g", "daemon off;"]
